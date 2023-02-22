@@ -1,15 +1,22 @@
 ﻿using Calculator;
 
 Tokenizer tokenizer = new Tokenizer();
-// 12 +( 3418*34)+ 2324826 ^   43
+Notation notation = new Notation();
+Calculations calculator = new Calculations();
+
 while (true)
 {
     Console.WriteLine("Enter equation: ");
     var input = Console.ReadLine();
     var tokenized = tokenizer.Tokenize(input);
-    for (int i = 0; i < tokenized.Count(); i++)
+    var post = notation.InfixToPostfix(tokenized);
+    for(int i = 0; i < post.Count(); i++)
     {
-        Console.WriteLine(tokenized.GetAt(i));
+        Console.Write(post.GetAt(i));
     }
+    Console.WriteLine("");
+    calculator.Calculate(post);
+
+    // calculator.Calculate(notation.InfixToPostfix(tokenizer.Tokenize(input)));
     Console.WriteLine("");
 } 
