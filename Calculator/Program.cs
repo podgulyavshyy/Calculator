@@ -5,6 +5,7 @@ Notation notation = new Notation();
 Calculations calculator = new Calculations();
 
 // 2+2^4+3+(3-1)*3^2 = 39
+//3+sin(4)-2*(5-3^3)
 
 while (true)
 {

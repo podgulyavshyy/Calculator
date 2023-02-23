@@ -11,11 +11,20 @@ public class Calculations
             {
                 calcStack.Push(input.GetAt(i));
             }
+            else if (input.GetAt(i) == "s")
+            {
+                if (input.GetAt(i) == "s")
+                {
+                    double b = Convert.ToDouble(calcStack.Pull());
+                    double sin = Math.Sin(b);
+                    calcStack.Push(sin.ToString());
+                }
+            }
             else
             {
-                int b = Int32.Parse(calcStack.Pull());
-                int a = Int32.Parse(calcStack.Pull());
-                int result = 0;
+                double b = Convert.ToDouble(calcStack.Pull());
+                double a = Convert.ToDouble(calcStack.Pull());
+                double result = 0;
                 if (input.GetAt(i) == "+")
                 {
                     result = a + b;
@@ -40,6 +49,7 @@ public class Calculations
                     temp = Math.Pow(ap, bp);
                     result = Convert.ToInt32(temp);
                 }
+                
                 calcStack.Push(result.ToString());
             }
         }

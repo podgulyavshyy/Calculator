@@ -8,7 +8,7 @@ public class Tokenizer
         KSEList kseListFinal = new KSEList();
 
         string[] numbers = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "0"};
-        string[] operators = {"+", "-", "*", "/", "^", "(", ")"};
+        string[] operators = {"+", "-", "*", "/", "^", "(", ")", "s"};
     
         for (int i = 0; i < line.Length; i++)
         {
