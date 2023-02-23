@@ -34,7 +34,11 @@ public class Calculations
                 }
                 if (input.GetAt(i) == "^")
                 {
-                    result = a ^ b;
+                    double ap = Convert.ToDouble(a);
+                    double bp = Convert.ToDouble(b);
+                    double temp = 0;
+                    temp = Math.Pow(ap, bp);
+                    result = Convert.ToInt32(temp);
                 }
                 calcStack.Push(result.ToString());
             }
