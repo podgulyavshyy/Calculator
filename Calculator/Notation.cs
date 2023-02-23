@@ -9,7 +9,8 @@ public class Notation
             {"+", 1},
             {"-", 1},
             {"*", 2},
-            {"/", 2}
+            {"/", 2},
+            {"^", 3} 
         };
         KSEStack stack = new KSEStack();
         KSEList output = new KSEList();
@@ -41,6 +42,10 @@ public class Notation
                 {
                     stack.Pull();
                 }
+            else if (tokens.GetAt(i) == "^")
+            {
+                stack.Push(tokens.GetAt(i));
+            }  
             }
         }
         while (stack.ViewTop() != null)
